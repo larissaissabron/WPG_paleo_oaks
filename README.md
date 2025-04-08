@@ -35,6 +35,7 @@ Table 3: Graphics
 | [First oak pollen filtered sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.08_wpg_oakfirst_filtered_fig.png) | First ever and first continuous oak pollen records from sites with records too long or short to include in main figure |
 | [Maximum oak pollen](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.08_wpg_oakmax_fig.png) | Maximum oak pollen records|
 | [Maximum oak pollen filtered sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.08_wpg_oakmax_filtered_fig.png) | Maximum oak pollen records from sites with records too long or short to include in main figure |
+| [Modelled oak pollen trends](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.08_wpg_oak_trends.png) | Oak pollen trends for first, first continuous, and maximum pollen visualized using a glm line of best fit|
 
 ## R Code
 
