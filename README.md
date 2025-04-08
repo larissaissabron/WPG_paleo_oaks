@@ -18,5 +18,5 @@ Table 2: Spatial data
 
 | File | Description |
 |---|---|
-| [Pacific Northwest Ecoregions]([https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/1_paleo_litreview.xlsx](https://data-wadnr.opendata.arcgis.com/datasets/3b9362e8f29e465a985aa8ddc8de2d86_0/about)) | Puget Trough polygon was isolated and used to approximate ecoregion boundary |
+| [Pacific Northwest Ecoregions](https://data-wadnr.opendata.arcgis.com/datasets/3b9362e8f29e465a985aa8ddc8de2d86_0/about) | Puget Trough polygon was isolated and used to approximate ecoregion boundary |
 
