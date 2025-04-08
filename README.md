@@ -22,7 +22,7 @@ Table 2: Spatial data
 | [Pacific Northwest Ecoregions](https://data-wadnr.opendata.arcgis.com/datasets/3b9362e8f29e465a985aa8ddc8de2d86_0/about) | Puget Trough polygon was isolated and used to approximate ecoregion boundary |
 | [WPG Ecoregion Boundary](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/WPG.zip) | Ecoregion boundary which is the Puget Trough boundary extracted from PNW ecoregions shapefile |
 | [WPG 10km Buffer](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/WPG_10km.zip) | Polygon that is WPG + 10 km buffer used to spatially filter paleoecological research sites |
-| [WPG oak paleo research sites]() | Shapefiles for 31 oak paleoecology research sites in WPG |
+| [WPG oak paleo research sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/wpg_paleo.zip) | Shapefiles for 31 oak paleoecology research sites in WPG |
 
 ## Graphics
 
