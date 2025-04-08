@@ -12,3 +12,11 @@ Table 1: Literature review, data mining, and filtering
 | [2_paleo_spatialfilter.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2_paleo_spatialfilter.xlsx) | Paleorecords within the ecoregion |
 | [3_wpg_oak_paleo_alldata.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/3_wpg_oak_paleo_alldata.xlsx) | Data mining of paleorecords |
 | [4_wpg_oak_paleo_clean.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/4_wpg_oak_paleo_clean.xlsx) | Cleaned up version of data mining to become .csv for use in R |
+
+
+Table 2: Spatial data
+
+| File | Description |
+|---|---|
+| [Pacific Northwest Ecoregions]([https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/1_paleo_litreview.xlsx](https://data-wadnr.opendata.arcgis.com/datasets/3b9362e8f29e465a985aa8ddc8de2d86_0/about)) | Puget Trough polygon was isolated and used to approximate ecoregion boundary |
+
