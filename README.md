@@ -21,3 +21,19 @@ Table 2: Spatial data
 |---|---|
 | [Pacific Northwest Ecoregions](https://data-wadnr.opendata.arcgis.com/datasets/3b9362e8f29e465a985aa8ddc8de2d86_0/about) | Puget Trough polygon was isolated and used to approximate ecoregion boundary |
 
+## Graphics
+
+Table 3: Graphics
+
+| File | Description |
+|---|---|
+|||
+
+## R Code
+
+Table 4: R Code
+
+| File | Description |
+|---|---|
+|||
+
