@@ -1,0 +1,290 @@
+---
+title: "WPG Oak Records"
+author: "Larissa Bron"
+date: "`r Sys.Date()`"
+output: html_document
+---
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+## Set-up workspace
+
+```{r}
+# load required packages (install if you don't have yet)
+library("dplyr") # Keep things working together nicely
+library("tidyverse") # Keep things working together nicely
+library("ggrepel") # Stagger labels in ggplot
+library("scales")  # Format things nicely
+
+```
+
+## Data upload
+
+```{r}
+# import data and filter out records that are too long or too short to allow for easier visualization
+WPGPaleo_oak_filtered <- read_csv("/Users/larissabron/Documents/MSc/RProject/data/2025.04.07__wpg_oak_paleo_clean.csv") %>% 
+  # arrange rows by latitude south to north
+  arrange(lat) %>% 
+  # filter out very long and very short records so trends easier to see
+  filter(record_begin < 20000, record_begin > 5000) %>% 
+  # create shortened names
+  mutate()
+
+# import unfiltered data
+WPGPaleo_oak <- read_csv("/Users/larissabron/Documents/MSc/RProject/data/2025.04.07__wpg_oak_paleo_clean.csv") %>% 
+  # arrange rows by latitude south to north
+  arrange(lat) 
+
+# check which information is lost in the filtering process
+filter_chk <- WPGPaleo_oak %>% 
+  anti_join(WPGPaleo_oak_filtered)
+
+# create a new factor combining citation and site for labelling the x-axis of scatter plots
+WPGPaleo_oak_filtered$citation_site <- factor(paste(WPGPaleo_oak_filtered$citation, WPGPaleo_oak_filtered$site, sep = " - "))
+
+```
+
+## FIGURE 1: Scatter plot of first and first continuous oak pollen
+
+```{r}
+# create the figure
+# order the citations by latitude
+wpg_oakfirst_fig <- ggplot(WPGPaleo_oak_filtered, aes(x = fct_inorder(citation_site))) +
+  # Sediment record range with error bars
+  geom_errorbar(aes(ymin = record_end, ymax = record_begin, color = "Record length"), width = 0.6, linewidth = 0.50) +
+  # adding oak_first as a separate dataset
+  geom_point(aes(y = oak_first, color = "First oak pollen"), shape = 8, size = 4) +
+  # add oak_first_cont dataset
+  geom_point(aes(y = oak_first_cont, color = "First continuous oak pollen"), size = 4, shape = 4) +
+  # set up theme
+  theme(plot.title = element_text(face = 'bold'),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        axis.title = element_text(face = 'bold'),
+        axis.ticks.y = element_blank(),
+        panel.border = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_line(size = 0.25, linetype = "solid", colour = "grey87"),
+        panel.grid.major.x = element_blank(),
+        panel.background = element_blank()) +
+  # reverse y-axis so dates are in the same order (ascending) as paleo studies
+  scale_y_reverse(breaks = seq(0, 20000, by = 2000)) +
+  # improve the visual of the x-axis by adding a line break 
+  scale_x_discrete(labels = label_wrap(25)) +
+  # set colors for the different datasets on the plot
+  scale_color_manual(values = c("Record length" = "lavenderblush3", 
+                                "First oak pollen" = "maroon",
+                                "First continuous oak pollen" = "chocolate3")) +
+  # label everything 
+  labs(
+    x = "Citation - Location (South to North)",
+    y = "Year (cal ybp)",
+    title = "First Ever and First Continuous Oak Pollen in\nWPG Paleoecological Records (20,000 to -67 cal ybp)",
+    color = "Legend"
+  ) 
+
+# view the figure
+wpg_oakfirst_fig
+
+```
+
+## Figure 2: Scatter plot of maximum oak pollen
+
+```{r}
+# create figure
+# order the citations by latitude
+wpg_oakmax_fig <- ggplot(WPGPaleo_oak_filtered, aes(x = fct_inorder(citation_site))) +
+  # Sediment record range via error bars
+  geom_errorbar(aes(ymin = record_end, ymax = record_begin, color = "Record length"), width = 0.6, linewidth = 0.50) +
+  # adding oak_first as a separate dataset
+  geom_point(aes(y = oak_max, color = "Maximum oak pollen"), shape = 8, size = 4) +
+  # set up theme
+  theme(plot.title = element_text(face = 'bold'),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        axis.title = element_text(face = 'bold'),
+        axis.ticks.y = element_blank(),
+        panel.border = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_line(size = 0.25, linetype = "solid", colour = "grey87"),
+        panel.grid.major.x = element_blank(),
+        panel.background = element_blank()) +
+  # labeling oak max %
+  geom_label(
+    aes(y = oak_max, label = paste0(`oak_max_pct`, "%")),
+    hjust = 0,
+    nudge_x = 0.2,  # Adjust as needed depending on your plot
+    size = 3,
+    label.size = 0, # No border around the label
+    fill = "white"
+  ) +
+  # reverse y-axis so dates are in the same order (ascending) as paleo studies
+  scale_y_reverse(breaks = seq(0, 20000, by = 2000)) +
+  # improve the visual of the x-axis by adding a line break 
+  scale_x_discrete(labels = label_wrap(25)) +
+  # set colors for the different datasets on the plot
+  scale_color_manual(values = c("Record length" = "lavenderblush3", 
+                                "Maximum oak pollen" = "maroon")) +  # <-- Fixed closing parenthesis
+  # label everything 
+  labs(
+    x = "Citation - Location (South to North)",
+    y = "Year (cal ybp)",
+    title = "Maximum Oak Pollen in\nWPG Paleoecological Records (20,000 to -67 cal ybp)",
+    color = "Legend"
+  )
+
+# view the figure
+wpg_oakmax_fig
+
+```
+## FIGURE 3: Filtered results long and short records - first oak pollen faceted
+
+```{r}
+# Create a new factor combining citation and site for the updated scatterplot
+filter_chk$citation_site <- factor(paste(filter_chk$citation, filter_chk$site, sep = " - "))
+
+# group records by length
+filter_chk$record_group <- ifelse(filter_chk$record_begin > 5000,
+                                   "Older than 5000 cal ybp",
+                                   "Younger than 5000 cal ybp")
+
+# create figure
+# order the citations by latitude
+filter_chk_fig <- ggplot(filter_chk, aes(x = fct_inorder(citation_site))) +
+  # Sediment record range via error bars
+  geom_errorbar(aes(ymin = record_end, ymax = record_begin, color = "Record length"), width = 0.6, linewidth = 0.50) +
+  # add oak_first dataset
+  geom_point(aes(y = oak_first, color = "First oak pollen"), size = 4, shape = 4) +
+  # adding oak_first_cont as a separate dataset
+  geom_point(aes(y = oak_first_cont, color = "First continuous oak pollen"), shape = 8, size = 4) +
+  # set up theme
+  theme(plot.title = element_text(face = 'bold'),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        axis.title = element_text(face = 'bold'),
+        axis.ticks.y = element_blank(),
+        panel.border = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_line(size = 0.25, linetype = "solid", colour = "grey87"),
+        panel.grid.major.x = element_blank(),
+        panel.background = element_blank()) +
+  # reverse y-axis so dates are in the same order (ascending) as paleo studies
+  scale_y_reverse(breaks = seq(0, 45000, by = 1000)) +
+  # improve the visual of the x-axis by adding a line break 
+  scale_x_discrete(labels = label_wrap(30)) +
+  # set colors for the different datasets on the plot
+  scale_color_manual(values = c("Record length" = "lavenderblush3", 
+                                "First oak pollen" = "maroon",
+                                "First continuous oak pollen" = "chocolate3")) +
+# label everything 
+  labs(
+    x = "Citation - Location (South to North)",
+    y = "Year (cal ybp)",
+    title = "First Ever and First Continuous Oak Pollen \nin WPG Paleoecological Records (filtered long and short records)",
+    color = "Legend"
+  ) +
+  # Create two facets - long and short records
+  facet_wrap(~record_group, scales = "free")
+
+# view figure
+filter_chk_fig
+
+```
+
+## FIGURE 4: Filtered results long and short records - maximum oak pollen faceted
+
+```{r}
+# create figure
+# order the citations by latitude
+filter_chk_max_fig <- ggplot(filter_chk, aes(x = fct_inorder(citation_site))) +
+  # sediment record range via error bars
+  geom_errorbar(aes(ymin = record_end, ymax = record_begin, color = "Record length"), width = 0.6, linewidth = 0.50) +
+  # add oak_max dataset
+  geom_point(aes(y = oak_first, color = "Maximum oak pollen"), size = 4, shape = 4) +
+  # set up theme
+  theme(plot.title = element_text(face = 'bold'),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        axis.title = element_text(face = 'bold'),
+        axis.ticks.y = element_blank(),
+        panel.border = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_line(size = 0.25, linetype = "solid", colour = "grey87"),
+        panel.grid.major.x = element_blank(),
+        panel.background = element_blank()) +
+  # reverse y-axis so dates are in the same order (ascending) as paleo studies
+  scale_y_reverse(breaks = seq(0, 45000, by = 1000)) +
+  # improve the visual of the x-axis by adding a line break 
+  scale_x_discrete(labels = label_wrap(30)) +
+  # set colors for the different datasets on the plot
+  scale_color_manual(values = c("Record length" = "lavenderblush3", 
+                                "Maximum oak pollen" = "maroon")) +
+# label everything 
+  labs(
+    x = "Citation - Location (South to North)",
+    y = "Year (cal ybp)",
+    title = "Maximum Oak Pollen \nin WPG Paleoecological Records (filtered long and short records)",
+    color = "Legend"
+  ) +
+  # labeling oak max %
+  geom_label(
+    aes(y = oak_max, label = paste0(`oak_max_pct`, "%")),
+    hjust = 0,
+    nudge_x = 0.2,  # Adjust as needed depending on your plot
+    size = 3,
+    label.size = 0, # No border around the label
+    fill = "white"
+  ) +
+  # create two facets - long and short records
+  facet_wrap(~record_group, scales = "free")
+
+# view figure
+filter_chk_max_fig
+
+```
+
+## Figure 5: Visualizing trends in oak pollen using a glm line of best fit
+
+```{r}
+# combine oak_first, oak_first_cont, and oak_max into one long dataframe
+WPGPaleo_combined <- WPGPaleo_oak_filtered %>%
+  # keep only the columns of interest
+  select(site_short, lat, oak_first, oak_first_cont, oak_max) %>%
+  # make dataframe long
+  pivot_longer(cols = c(oak_first, oak_first_cont, oak_max),
+               names_to = "type",
+               values_to = "cal_ybp")
+
+# create figure
+wpg_oak_all_fig <- ggplot(WPGPaleo_combined, aes(x = lat, y = cal_ybp)) +
+  geom_point() +
+  # add line of best fit using generalized linear model (glm) 
+  geom_smooth(method = "glm", se = TRUE) +  # "auto" lets it pick glm or gam
+  # order y-axis youngest to oldest dates
+  scale_y_reverse(breaks = seq(0, 20000, by = 1000)) +
+  # keep labels from overlapping
+  geom_text_repel(aes(label = site_short), size = 2.5, max.overlaps = 20) +
+  # break up figure into three facets
+  facet_wrap(~ type, labeller = as_labeller(c(
+    "oak_first" = "First Oak Pollen",
+    "oak_first_cont" = "First Continuous Oak Pollen",
+    "oak_max" = "Maximum Garry Oak Pollen"
+  ))) +
+  # label everything
+  labs(
+    x = "Latitude",
+    y = "Years (cal ybp)",
+    title = "Oak Pollen Trends by Latitude in\nWPG Paleoecological Records (20,000 to -67 cal ybp)"
+  ) +
+  # set up theme
+  theme(plot.title = element_text(face = 'bold'),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        axis.title = element_text(face = 'bold'),
+        axis.ticks.y = element_blank(),
+        panel.border = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_line(size = 0.25, linetype = "solid", colour = "grey87"),
+        panel.grid.major.x = element_blank(),
+        panel.background = element_blank()) 
+
+# View the plot
+wpg_oak_all_fig
+
+```
