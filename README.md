@@ -43,5 +43,6 @@ Table 4: R Code
 
 | File | Description |
 |---|---|
-|||
+| [RMarkdown script for figures](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/WPGOakRecords_Figures.Rmd) | RMarkdown script used to make figures |
+| [Resulting HTML file for figures](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/WPGOakRecords_Figures.html) | HTML file product of 'knitting' RMarkdown script used to make figures|
 
