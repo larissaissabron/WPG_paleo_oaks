@@ -20,6 +20,8 @@ Table 2: Spatial data
 | File | Description |
 |---|---|
 | [Pacific Northwest Ecoregions](https://data-wadnr.opendata.arcgis.com/datasets/3b9362e8f29e465a985aa8ddc8de2d86_0/about) | Puget Trough polygon was isolated and used to approximate ecoregion boundary |
+| [WPG Ecoregion Boundary]() | Ecoregion boundary which is the Puget Trough boundary extracted from PNW ecoregions shapefile |
+| [WPG 10km Buffer]() | Polygon that is WPG + 10 km buffer used to spatially filter paleoecological research sites |
 
 ## Graphics
 
