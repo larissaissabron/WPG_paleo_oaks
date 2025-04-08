@@ -13,6 +13,7 @@ Table 1: Literature review, data mining, and filtering
 | [3_wpg_oak_paleo_alldata.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/3_wpg_oak_paleo_alldata.xlsx) | Data mining of paleorecords |
 | [4_wpg_oak_paleo_clean.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/4_wpg_oak_paleo_clean.xlsx) | Cleaned up version of data mining to become .csv for use in R |
 
+## Spatial data products 
 
 Table 2: Spatial data
 
