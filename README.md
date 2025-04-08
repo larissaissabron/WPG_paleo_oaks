@@ -30,7 +30,7 @@ Table 3: Graphics
 
 | File | Description |
 |---|---|
-|||
+| [Map oak paleo research sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.07_wpg_oak_paleo.png) | Map of 31 oak paleoecology research sites in the WPG ecoregion|
 
 ## R Code
 
