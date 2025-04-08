@@ -2,11 +2,13 @@
 
 ## Literature review, data mining, and filtering
 
+All .xlsx files are provided because they include associated metadata. 
+
 Table 1: Literature review, data mining, and filtering
 
 | File | Description |
 |---|---|
-| [1_paleo_litreview.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/1_paleo_litreview.xlsx) | Literature review |
+| [1_paleo_litreview.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/1_paleo_litreview.xlsx) | Literature review with reference list |
 | [2_paleo_spatialfilter.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2_paleo_spatialfilter.xlsx) | Paleorecords within the ecoregion |
 | [3_wpg_oak_paleo_alldata.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/3_wpg_oak_paleo_alldata.xlsx) | Data mining of paleorecords |
 | [4_wpg_oak_paleo_clean.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/4_wpg_oak_paleo_clean.xlsx) | Cleaned up version of data mining to become .csv for use in R |
