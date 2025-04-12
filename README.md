@@ -1,5 +1,9 @@
 #  Oak Paleoecology in the Willamette Valley-Puget Trough-Georgia Basin (WPG) Ecoregion 
 
+## Report
+
+This project was created as part of a Directed Studies (GEOG590) course at the University of Victoria in Spring 2025. The [report is available here](https://drive.google.com/file/d/1NZqTkk7XswvIovnQzmh_X_JPMwS72JwP/view?usp=sharing).
+
 ## Literature review, data extraction, and filtering
 
 All .xlsx files are provided because they include associated metadata. 
