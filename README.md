@@ -8,27 +8,27 @@ Table 1: Literature review, data mining, and filtering
 
 | File | Description |
 |---|---|
-| [1_paleo_litreview.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/1_paleo_litreview.xlsx) | Literature review with reference list. |
-| [2_paleo_spatialfilter.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2_paleo_spatialfilter.xlsx) | Paleorecords within the ecoregion. |
-| [3_wpg_oak_paleo_alldata.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/3_wpg_oak_paleo_alldata.xlsx) | Data mining of paleorecords. |
-| [4_wpg_oak_paleo_clean.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/4_wpg_oak_paleo_clean.xlsx) | Cleaned up version of data mining to become .csv for use in R. |
+| [1_paleo_litreview.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/1_paleo_litreview.xlsx) | Literature review with reference list for all sites. |
+| [2_paleo_spatialfilter.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2_paleo_spatialfilter.xlsx) | Filtered literature review results: Paleorecords within the ecoregion. |
+| [3_wpg_oak_paleo_alldata.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/3_wpg_oak_paleo_alldata.xlsx) | Data extraction from paleorecords. |
+| [4_wpg_oak_paleo_clean.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/4_wpg_oak_paleo_clean.xlsx) | Cleaned up version of data extraction to become .csv for use in R. |
 
 ## Spatial data products 
 
-Table 2: Spatial data
+Table 2: Spatial data 
 
 | File | Description |
 |---|---|
-| [Pacific Northwest Ecoregions](https://data-wadnr.opendata.arcgis.com/datasets/3b9362e8f29e465a985aa8ddc8de2d86_0/about) | Puget Trough polygon was isolated and used to approximate ecoregion boundary. |
+| [Pacific Northwest Ecoregions](https://data-wadnr.opendata.arcgis.com/datasets/3b9362e8f29e465a985aa8ddc8de2d86_0/about) | Includes the Puget Trough ecoregion. |
 | [WPG Ecoregion Boundary](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/WPG.zip) | Ecoregion boundary which is the Puget Trough boundary extracted from PNW ecoregions shapefile. |
-| [WPG 10km Buffer](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/WPG_10km.zip) | Polygon that is WPG + 10 km buffer used to spatially filter paleoecological research sites. |
-| [Garry oak range](https://databasin.org/datasets/967ab76d207c4d00ae4503a54945cc2a/) | Garry oak range that is reported in most reports. |
+| [WPG 10km Buffer](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/WPG_10km.zip) | Polygon that is WPG ecoregion + 10 km buffer used to spatially filter paleoecological research sites. |
+| [Garry oak range](https://databasin.org/datasets/967ab76d207c4d00ae4503a54945cc2a/) | Garry oak range that is used in most reports. |
 | [Garry oak observations](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2024_GBIF_QuercusGarryana.zip) | Garry oak occurrences pulled from the [Global Biodiversity Information Facility](https://doi.org/10.15468/dl.x8qxsa) in September 2024 |
-| [WPG oak paleo research sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/wpg_paleo.zip) | Shapefiles for 31 oak paleoecology research sites in WPG. |
+| [WPG oak paleo research sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/wpg_paleo.zip) | Shapefiles for 31 oak paleoecology research sites in WPG used in the report. |
 
 ## Graphics
 
-Table 3: Graphics
+Table 3: Graphics and maps
 
 | File | Description |
 |---|---|
@@ -42,7 +42,7 @@ Table 3: Graphics
 
 ## R Code
 
-Table 4: R Code
+Table 4: R code
 
 | File | Description |
 |---|---|
