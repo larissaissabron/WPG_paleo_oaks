@@ -1,6 +1,6 @@
-# Pleistocene-Holocene Oak Paleoecology in the Willamette Valley-Puget Trough-Georgia Basin (WPG) Ecoregion
+#  Oak Paleoecology in the Willamette Valley-Puget Trough-Georgia Basin (WPG) Ecoregion 
 
-## Literature review, data mining, and filtering
+## Literature review, data extraction, and filtering
 
 All .xlsx files are provided because they include associated metadata. 
 
@@ -22,6 +22,8 @@ Table 2: Spatial data
 | [Pacific Northwest Ecoregions](https://data-wadnr.opendata.arcgis.com/datasets/3b9362e8f29e465a985aa8ddc8de2d86_0/about) | Puget Trough polygon was isolated and used to approximate ecoregion boundary. |
 | [WPG Ecoregion Boundary](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/WPG.zip) | Ecoregion boundary which is the Puget Trough boundary extracted from PNW ecoregions shapefile. |
 | [WPG 10km Buffer](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/WPG_10km.zip) | Polygon that is WPG + 10 km buffer used to spatially filter paleoecological research sites. |
+| [Garry oak range](https://databasin.org/datasets/967ab76d207c4d00ae4503a54945cc2a/) | Garry oak range that is reported in most reports. |
+| [Garry oak observations](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2024_GBIF_QuercusGarryana.zip) | Garry oak occurrences pulled from the [Global Biodiversity Information Facility](https://doi.org/10.15468/dl.x8qxsa) in September 2024 |
 | [WPG oak paleo research sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/wpg_paleo.zip) | Shapefiles for 31 oak paleoecology research sites in WPG. |
 
 ## Graphics
