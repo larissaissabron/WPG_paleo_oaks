@@ -36,7 +36,7 @@ Table 3: Graphics and maps
 
 | File | Description |
 |---|---|
-| [Map oak paleo research sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.07_wpg_oak_paleo.png) | Map of 31 oak paleoecology research sites in the WPG ecoregion. |
+| [Map oak paleo research sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.10_WPGPaleoMap.png) | Map of 31 oak paleoecology research sites in the WPG ecoregion. Sites are described in [4_wpg_oak_paleo_clean.xlsx](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/4_wpg_oak_paleo_clean.xlsx) |
 | [Map Garry oak range](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.10_GarryOakMaps.png) | The Garry oak range and occurrences are compared with the WPG ecoregion extent |
 | [First oak pollen](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.08_wpg_oakfirst_fig.png) | First ever and first continuous oak pollen records. |
 | [First oak pollen filtered sites](https://github.com/larissaissabron/WPG_paleo_oaks/blob/main/2025.04.08_wpg_oakfirst_filtered_fig.png) | First ever and first continuous oak pollen records from sites with records too long or short to include in main figure. |
