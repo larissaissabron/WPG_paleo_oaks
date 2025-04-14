@@ -2,7 +2,7 @@
 
 ## Report
 
-This project was created as part of a Directed Studies (GEOG590) course at the University of Victoria in Spring 2025. The [report is available here](https://drive.google.com/file/d/1NZqTkk7XswvIovnQzmh_X_JPMwS72JwP/view?usp=sharing).
+This project was created as part of a Directed Studies (GEOG590) course at the University of Victoria in Spring 2025. The [report is available here](https://drive.google.com/file/d/1nByWW3kgNOK2mNbJKk1_7WdP2HT-ZfEN/view?usp=drive_link).
 
 ## Literature review, data extraction, and filtering
 
